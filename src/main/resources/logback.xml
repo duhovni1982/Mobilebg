@@ -1,0 +1,24 @@
+<configuration>
+
+    <!-- Console Appender: Logs to the console -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File Appender: Logs to a file -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/test.log</file>  <!-- The location where the log file will be stored -->
+        <append>true</append>  <!-- Append to the existing file, if any -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger with both Console and File appenders -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
